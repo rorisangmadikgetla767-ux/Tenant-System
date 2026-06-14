@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(51, 112, 158);
+}
+
+h1 {
+    text-indent: 7cm;
+    text-decoration-line: underline;
+}
+
+.card{
+    background-color: white;
+    border-radius: 0.2cm;
+}
+
+.card:hover {
+    transform: translateY(-6px) ;
+
+}

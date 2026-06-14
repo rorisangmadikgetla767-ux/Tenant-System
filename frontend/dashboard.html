@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    
+    <div>
+
+        <h1>Madikgetla Heights</h1>
+        
+
+        
+
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            
+            <!-- The most simple way to ensure the searchbar is working, 
+             is that we should create a hardcoded JS array of location string in the dashboard.html-->
+            <!--I am using a basic autocomplete dropdown filtering as you type-->
+            <!--No backend needed for now, it is absolutely easy to swap for an API call later, allegedly-->
+            <div>
+                <input type="text" id="location-search" placeholder="Search locations" autocomplete="off">
+                <div id="search-suggestions" class="suggestion-box"></div>
+
+            </div>
+            
+          
+            
+            
+            
+        </div>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn"
+        onclick="closeNav()">&times;</a>
+            <a href="#">Properties</a>
+            <a href="#">Complaints</a>
+            <a href="#">Book a property view</a>
+        </div>
+
+        <!--Use any element to open the sidenav-->
+        <span onclick="openNav()"></span>
+
+        <div class="card-holder">
+            <div class="card" style="background-color: rgb(221, 221, 229);">
+                
+                <h2>Core Goal:</h2>
+                <p>
+
+                    We trying to uplift the Bloemfontein property sector
+
+
+                </p>
+
+            </div>
+            <div class="card" style="background-color: rgb(208, 208, 219);">
+                <h2>More about our Locations</h2>
+                <p>Our property locations are placed at the heart of Bloemfontein's culture</p>
+
+            </div>
+
+            <div class="card" onclick="document.getElementById('regulations-panel').style.display='block'" style="background-color: rgb(215, 215, 224); ">
+                <h2 >Regulations and our Rules</h2>
+                <p>Terms and Condition</p>
+                <div id="regulations-panel" style="display: none;">
+                    <form>
+                        <div class="field">
+                            <p>This app was designed to meet each and every client conveniences
+                                <br>
+                                <p>No late payments</p>
+                                <br>
+                                <p>No parties/ Noise past 22:30</p>
+                                <label>Enquires</label>
+                                <input type="text" id="enquires" placeholder="Write to us, we will get back" style="height: 1.8cm; width:6cm;">
+                                <br>
+                                <br>
+                                <button onclick="alert('Enquiry submitted')" type="submit">Submit Enquiry</button>
+                            </p>
+                            
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="card" onclick="document.getElementById('payment-panel').style.display='block'" style="background-color: rgb(168, 168, 188);">
+                <h2>Make Payment</h2>
+                <p>Rent payment</p>
+                <div id="payment-panel" style="display: none;">
+                    <form>
+                        <div class="field">
+                            <label for="amount">Amount (This app uses ZAR only)</label>
+                            <input type="number" id="amount" placeholder=" R3000 minimum">
+                        </div>
+
+                        <div class="field">
+                            <label for="account">To account</label>
+                            <select id="account">
+                                <option>Rent account</option>
+                                <option>Amenities</option>
+
+                            </select>
+
+                        </div>
+                        <div>
+                            <label for="ref">Reference</label>
+                            <input type="text" id="ref" placeholder="e.g Rent">
+
+                        </div>
+                        <button onclick="alert('Provided info is submitted')" type="submit">Confirm Payment</button>
+                    </form>
+
+                </div>
+                <div>
+                    
+                </div>
+                
+            </div>
+            
+
+        </div>
+        <button onclick="document.getElementById('exit-button')"> Exit App </button>
+        <button onclick="document.getElementById('next-button')"> Next </button>
+
+        
+              
+
+        
+    </div>
+<script src="location.js"></>
+</body>
+</html>

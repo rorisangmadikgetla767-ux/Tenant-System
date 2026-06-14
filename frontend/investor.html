@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Portal</title>
+    <link rel="stylesheet" href="iportal.css">
+</head>
+<body>
+    <div>
+        <h1>I-Portal</h1>
+    </div>
+
+        <div class="card">
+            <h3>Investor's Notice</h3>
+            <p>For more on our I-policies click on this card</p>
+            <div id="Investor-panel">
+                
+                    <div class="field">
+                        <p>For more info, contact the CSO R.K Madikgetla</p>
+                        <label>I-Name</label>
+
+                        <!--Add a name or an id attribute, if not javascript won't be able to work with it-->
+                        <input type="text" placeholder="Enter the investor name">
+
+
+                    </div>
+                
+
+            </div>
+            <script>
+                const card = document.querySelector('.card');
+                const panel = document.getElementById('Investor-panel');
+                card.addEventListener('click', () => {
+                    panel.style.display = 'block';
+                });
+                card.addEventListener('click', () => {
+                    if (panel.style.display === 'none' || panel.style.display === '') {
+                       
+                    }
+                    panel.addEventListener('click', (e) => {
+                        e.stopPropagation()
+                    });
+                });
+            </script>
+
+        </div>
+        
+    
+</body>
+</html>

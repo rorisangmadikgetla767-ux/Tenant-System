@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<main>
+    <header class="app-header">
+        <h1>Madikgetla Tenants</h1>
+        <span id="current-date"></span>
+    </header>
+
+    <main class="app-main"></main>
+      <!--Dashboard summary cards-->
+      <section class="dashboard" id="dashboard">
+      </section>
+
+      <!--Add tenant form-->
+      <section class="section-card" id="add-tenant-section">
+        <h2>Add Tenant</h2>
+        <form id="tenant-form">
+
+        </form>
+
+      </section>
+
+      <!--Tenants table-->
+      <section class="section-card" id="tenants-section">
+        <h2>Tenants</h2>
+        <table id="tenants-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Unit</th>
+                    <th>Email</th>
+                    <th>Rent (R)</th>
+                    <th>Due Data</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tenants-body">
+            </tbody>
+        </table>
+      </section>
+    
+    </main>
+    <script src="storage.js"></script>
+    <script src="tenants.js"></script>
+    <script src="payments.js"></script>
+    
+    
+</body>
