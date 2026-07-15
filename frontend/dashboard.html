@@ -96,7 +96,7 @@
                     <form>
                         <div class="field">
                             <label for="amount">Amount (This app uses ZAR only)</label>
-                            <input type="number" id="amount" placeholder=" R3000 minimum">
+                            <input type="number" id="amount" step="0.01" placeholder=" R3000 minimum">
                         </div>
 
                         <div class="field">
@@ -113,8 +113,9 @@
                             <input type="text" id="ref" placeholder="e.g Rent">
 
                         </div>
-                        <button onclick="alert('Provided info is submitted')" type="submit">Confirm Payment</button>
+                        <button type="submit">Confirm Payment</button>
                     </form>
+                    <a href="payments.html">View Payment histor</a>
 
                 </div>
                 <div>
@@ -133,6 +134,7 @@
 
         
     </div>
-<script src="location.js"></>
+<script src="location.js"></script>
+<script src="payment.js"></script>
 </body>
 </html>

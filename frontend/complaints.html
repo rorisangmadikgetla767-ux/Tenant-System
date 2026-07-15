@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Complaint / Enquiry Portal</h1>
+    <p style="display: block;">If you have any suggestions, enquiries or complaints, choose any card that fit your needs</p>
+
+    <div class="card-holder">
+        <div class="card" style="background-color: rgb(142, 142, 189);" 
+            onclick="document.getElementById('category-panel').style.display='block'">
+          Categories
+        </div>
+             
+        <div class="card" style="background-color: rgb(125, 125, 172) ;"
+             onclick="document.getElementById('enquiry-panel').style.display='block'">
+             Enquiries
+        </div>
+           
+                
+           
+        <div class="card" style="background-color: rgb(96, 96, 145);"
+            onclick="document.getElementById('suggestion-panel').style.display='block'">Suggestions Box</div>
+
+
+        
+    </div>
+
+    <!--Categories/ Complaint panel-->
+    <div id="category-panel" style="display: none;">
+        <h2>Welcome to the Panel that will solve today's problem</h2>
+        <form id="complaint-form">
+            <label for="tenant_id">Tenant ID</label>
+            <input type="number" id="tenant_id" placeholder="Your Tenant ID" required>
+
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="">Select a category</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Noise">Noise</option>
+                <option value="Security">Security</option>
+                <option value="Other">Other</option>
+
+            </select>
+            <label for="description">Tell us what the problem might be.</label>
+            <textarea id="description" placeholder="Describe the issue" required></textarea>
+            
+            <button type="submit">Submit Complaint</button>
+            <button type="reset">Reset form</button>
+
+
+        </form>
+        
+
+    </div>
+    <div id="enquiry-panel" style="display: none;">
+            <h3>Welcome to the portal where all your questions are answered.</h3>
+            <label for="enquiry-text">Shoot a question</label>
+            <input type="text" id="enquiry-text" placeholder="Type your question">
+        </div>
+
+        <!-- Suggestions Panel-->
+         
+         <div id="suggestion-panel" style="display: none;">
+            <h3>Great idea? You can make us a suggestion!</h3>
+            <label>Share an idea!</label>
+            <input type="text" id="suggestion-text" placeholder="Shoot your shot">
+            <button disabled>Coming soon</button>
+
+         </div>
+         <script src="complaints.js"></script>
+
+</body>
+</html>
