@@ -34,5 +34,13 @@ class Complaint(Base):
     description = Column(String, nullable=False)
     status = Column(String, default="open", nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class Location(Base):
+    __table__name = "locations"  
     
-    
+    id = Column(Integer, primary_key=True, index=True)
+    address = Column(String, nullable=False)
+    description = Column(String, nullable=True)
+    price = Column(float, nullable=True)
+    availability = Column(String, default="Available", nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now)

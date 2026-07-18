@@ -80,4 +80,26 @@ def create_complaint(complaint: schemas.ComplaintCreate, db: Session = Depends(g
     db.refresh(new_complaint)
     
     notifications.send_complaint_email(tenant.full_name, complaint.category, complaint.description)
+    notifications.email_response_to_client(tenant.email, tenant.full_name, complaint.category, new_complaint.id)
     return new_complaint
+
+@app.get("/tenants/{tenant_id}", response_model=schemas.TenantResponse)
+def get_tenant(tenant_id: int, db: Session = Depends(get_db)):
+    tenant = db.query(models.Tenant).filter(models.Tenant.id == tenant_id).first()
+    if not tenant:
+        raise HTTPException(status_code=404, detail="Tenant not found , Mohiri a fumanehe")
+    return tenant
+
+@app.post("/locations", response_model=schemas.LocationResponse)
+def create_location(location: schemas.LocationCreate, db: Session = Depends(get_db)):
+    new_location = models.Location(
+        address=location.address,
+        description=location.description,
+        price=location.price,
+        availability=location.availability
+    )
+    
+    db.add(new_location)
+    db.commit()
+    db.refresh(new_location)
+    return new_location

@@ -62,4 +62,21 @@ class ComplaintResponse(BaseModel):
     
     class Config:
         from_attributes = True
+        
+class LocationCreate(BaseModel):
+    id: int
+    address: str
+    description: Optional[str] = None
+    price: Optional[str] = None
+    created_at: datetime
+    
+class LocationResponse(BaseModel):
+    id: int
+    address: str
+    description: Optional[str] = None
+    price: Optional[float] = None   
+    created_at = datetime
+    
+    class config:
+        from_attributes = True
     

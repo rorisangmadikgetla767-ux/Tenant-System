@@ -46,11 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function loadPayments() {
+    const tbody = document.getElementById("payments-table-body");
+    if (!tbody) return;
+
     const response = await fetch("http://127.0.0.1:8000/api/payments");
     const payments = await response.json();
-
     
-    const tbody = document.getElementById("payments-table-body");
     tbody.innerHTML = ""; // clear old rows first
 
     payments.forEach(payment => {
