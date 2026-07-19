@@ -15,6 +15,7 @@ searchInput.addEventListener('input', () => {
         suggestionsBox.style.display = 'none';
         return;
     }
+    const matches = locations.filter(loc => loc.toLowerCase().includes(query));
 
     matches.forEach(match => {
         const item = document.createElement('div');
@@ -22,6 +23,7 @@ searchInput.addEventListener('input', () => {
         item.addEventListener('click', () => {
             searchInput.value = match;
             suggestionsBox.style.display = 'none';
+        });
 
         
         suggestionsBox.appendChild(item);
@@ -33,7 +35,7 @@ searchInput.addEventListener('input', () => {
 
 // Hide the suggestion when clicking outside
 document.addEventListener('click', (e) => {
-    if (!search.contains(e.target) && !suggestionsBox.contains(e.target)) {
+    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
         suggestionsBox.style.display = 'none';
     }
 });
